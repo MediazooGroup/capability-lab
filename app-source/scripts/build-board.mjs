@@ -1,0 +1,30 @@
+import fs from 'node:fs';
+const lesson=JSON.parse(fs.readFileSync('lib/learning-board.json','utf8'));
+const site='https://peritus-capability-lab.john959475.chatgpt.site';
+const positions=[[80,220],[840,220],[1600,220],[1600,780],[840,780],[80,780]];
+let counter=1;
+const elements=[];
+function base(id,type,x,y,width,height,extra={}){return {id,type,x,y,width,height,angle:0,strokeColor:'#263443',backgroundColor:'transparent',fillStyle:'solid',strokeWidth:2,strokeStyle:'solid',roughness:1,opacity:100,groupIds:[],frameId:null,index:null,roundness:{type:3},seed:counter++,version:1,versionNonce:1,isDeleted:false,boundElements:null,updated:1,link:null,locked:false,...extra}}
+function text(id,x,y,value,size=32,color='#263443',group=null){const lines=value.split('\n');return base(id,'text',x,y,Math.max(...lines.map(l=>l.length))*size*.57,lines.length*size*1.3,{text:value,originalText:value,fontSize:size,fontFamily:2,textAlign:'left',verticalAlign:'top',containerId:null,autoResize:true,lineHeight:1.3,baseline:size,strokeColor:color,roughness:0,roundness:null,groupIds:group?[group]:[]})}
+elements.push(text('title',80,28,lesson.title,78),text('subtitle',86,134,'ASK  →  LISTEN  →  AGREE     /     A 10-minute learning board',28,'#59636d'));
+const arrows=[[[685,420],[140,0]],[[1445,420],[140,0]],[[1900,646],[0,118]],[[1590,990],[-130,0]],[[830,990],[-130,0]]];
+arrows.forEach(([start,end],i)=>elements.push(base('flow-'+i,'arrow',...start,Math.abs(end[0]),Math.abs(end[1]),{points:[[0,0],end],startBinding:null,endBinding:null,startArrowhead:null,endArrowhead:'arrow',elbowed:false,strokeColor:'#788b91',strokeWidth:3})));
+lesson.topics.forEach((topic,i)=>{const[x,y]=positions[i],g='group-'+topic.id;
+elements.push(base(topic.id,'rectangle',x,y,600,420,{backgroundColor:topic.color,groupIds:[g],link:site+'/board#'+topic.id,customData:{topic:topic.id,source:topic.source}}));
+elements.push(text(topic.id+'-num',x+32,y+27,topic.number+'  /  '+topic.minutes+' MIN',23,'#465364',g));
+elements.push(text(topic.id+'-title',x+32,y+91,topic.title,46,'#1c2a37',g));
+elements.push(text(topic.id+'-body',x+32,y+181,topic.lines.join('\n'),30,'#263443',g));
+elements.push(text(topic.id+'-link',x+32,y+350,'Explore this stop  ↗',24,'#263443',g));
+});
+elements.push(text('footer',80,1250,lesson.fictional+'  /  Built from the learning brain. Editable in Excalidraw.',24,'#59636d'));
+const board={type:'excalidraw',version:2,source:site,elements,appState:{viewBackgroundColor:'#f7f9fc',currentItemFontFamily:2},files:{}};
+fs.writeFileSync('lib/board-scene.json',JSON.stringify(board));
+fs.mkdirSync('public/downloads',{recursive:true});
+fs.writeFileSync('public/downloads/better-one-to-ones.excalidraw',JSON.stringify(board,null,2));
+const draftElements=elements.filter(e=>['ask','listen','agree'].some(id=>e.id===id||e.id.startsWith(id+'-')));
+const draft={...board,elements:draftElements};
+fs.writeFileSync('lib/board-draft.json',JSON.stringify(draft));
+fs.writeFileSync('public/downloads/first-draft.excalidraw',JSON.stringify(draft,null,2));
+fs.mkdirSync('public/excalidraw-assets',{recursive:true});
+fs.cpSync('node_modules/@excalidraw/excalidraw/dist/prod/fonts','public/excalidraw-assets/fonts',{recursive:true});
+console.log(`Built ${elements.length} editable elements from ${lesson.topics.length} source-backed learning stops.`);

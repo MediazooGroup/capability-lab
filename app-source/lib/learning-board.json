@@ -1,0 +1,137 @@
+{
+  "title": "Better first one-to-ones",
+  "subtitle": "A little less advice. A better conversation.",
+  "outcome": "Ask an open question, listen before advising, and agree a clear next step.",
+  "minutes": 10,
+  "fictional": "A fictional learning example · Northstar Services",
+  "topics": [
+    {
+      "id": "start",
+      "number": "01",
+      "title": "Start with curiosity",
+      "short": "Start here",
+      "minutes": 1,
+      "color": "#f8d7ae",
+      "headline": "You do not need all the answers.",
+      "summary": "Your first one-to-one is a chance to understand someone’s work, not prove that you know everything.",
+      "lines": [
+        "A useful first one-to-one",
+        "Ask → Listen → Agree",
+        "One conversation. One next step."
+      ],
+      "detail": "Think of a colleague you will speak with this week. What would you like to understand about their work? Keep that person in mind as you explore the board.",
+      "source": "learning-brain/01-audience.md",
+      "prompt": "What might you learn if you ask before you advise?"
+    },
+    {
+      "id": "ask",
+      "number": "02",
+      "title": "Ask",
+      "short": "Ask",
+      "minutes": 1,
+      "color": "#f6e7aa",
+      "headline": "Open the conversation.",
+      "summary": "Ask one open question about the colleague’s work. Leave room for an answer you did not expect.",
+      "lines": [
+        "“What is getting in the way",
+        "of a good week?”",
+        "Leave room for their answer."
+      ],
+      "detail": "An open question helps the colleague describe what matters to them. A leading question embeds your own answer before they have had a chance to explain.",
+      "source": "learning-brain/02-framework.md",
+      "prompt": "Try a question beginning with “What…” or “How…”."
+    },
+    {
+      "id": "listen",
+      "number": "03",
+      "title": "Listen",
+      "short": "Listen",
+      "minutes": 1,
+      "color": "#c7ebe4",
+      "headline": "Understand before you solve.",
+      "summary": "Let them finish. Reflect back what you heard. Check whether you understood it.",
+      "lines": [
+        "“It sounds as if priorities",
+        "keep changing.”",
+        "“Have I understood that?”"
+      ],
+      "detail": "Reflection is a check, not a diagnosis. If you have misunderstood, let the colleague correct you before exploring a solution.",
+      "source": "learning-brain/02-framework.md",
+      "prompt": "What would you say to check your understanding?"
+    },
+    {
+      "id": "agree",
+      "number": "04",
+      "title": "Agree",
+      "short": "Agree",
+      "minutes": 1,
+      "color": "#ccdafa",
+      "headline": "Make the next step clear.",
+      "summary": "Decide one next action together. Name the action, its owner and the follow-up date.",
+      "lines": [
+        "ONE ACTION",
+        "A named owner",
+        "A date to check back"
+      ],
+      "detail": "“We should communicate better” is hard to follow up. Agree what someone will actually do and when you will check whether it helped.",
+      "source": "learning-brain/02-framework.md",
+      "prompt": "Can both people say what will happen next?"
+    },
+    {
+      "id": "try",
+      "number": "05",
+      "title": "Meet Sam",
+      "short": "Try a decision",
+      "minutes": 2,
+      "color": "#f8cabc",
+      "headline": "What would you say next?",
+      "summary": "“Every shift the priorities change. I feel like I am always behind.”",
+      "lines": [
+        "Sam feels always behind.",
+        "What do you say next?",
+        "Choose. See why. Try again."
+      ],
+      "detail": "Choose the strongest opening for this fictional situation. The explanation matters more than getting a letter right.",
+      "source": "learning-brain/03-scenarios.md",
+      "prompt": "Ask before you solve.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Try making a better to-do list.",
+          "feedback": "Advice arrives before you understand the work. Ask what is happening first.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Which change has made the biggest difference this week?",
+          "feedback": "This invites a concrete example without assuming the cause. Now listen and reflect back what you heard.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "We are all busy; it will settle down.",
+          "feedback": "This closes the conversation. Acknowledge the concern and ask an open question.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "number": "06",
+      "title": "Make it yours",
+      "short": "Practise & keep",
+      "minutes": 4,
+      "color": "#dceac7",
+      "headline": "Three minutes. One better conversation.",
+      "summary": "Work in pairs: one manager, one Sam. Rehearse the conversation, then keep one next action.",
+      "lines": [
+        "1 min · Ask an open question",
+        "1 min · Reflect what you heard",
+        "1 min · Agree the next step"
+      ],
+      "detail": "Use the remaining minute to reflect and write your own next action. If working alone, say your opening and reflection aloud, then write the action you would agree.",
+      "source": "learning-brain/03-scenarios.md",
+      "prompt": "Did you ask, listen and agree? What will you do next?"
+    }
+  ]
+}

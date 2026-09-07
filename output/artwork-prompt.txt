@@ -1,0 +1,13 @@
+Use case: stylized-concept
+Asset type: ultra-wide 16:9 cinematic cover artwork for a senior learning and development leadership web presentation.
+Primary request: an original tactile generative art composition expressing scattered knowledge becoming repeatable capability. Many very thin translucent planes and fine threads drift loosely at the far right and gather into an elegant coherent dimensional loop or flowing ribbon entirely within the right half.
+Scene/backdrop: seamless near-black midnight ground #0B0E15, subtle depth and subtle fine grain.
+Style/medium: refined editorial cover, beautifully rendered three-dimensional abstract art, extraordinary dimensional depth, restrained premium visual craft.
+Composition/framing: one cohesive ultra-wide horizontal 16:9 composition. The LEFT 55 PERCENT MUST REMAIN VERY DARK AND ALMOST EMPTY, a quiet clean negative-space field reserved for large editable typography. All focal forms remain on the right, with far-right scattered filaments gathering into a smooth coherent loop around the right third; airy layered translucency, compelling but restrained.
+Lighting/mood: luminous ember edge lighting, controlled shadows, subtle highlights, cinematic elegant confidence.
+Color palette: midnight #0B0E15 dominates; glowing ember orange #EC6733 gives the main shape; extremely sparing aqua #46D6C8 accents; white only as subtle highlights.
+Materials/textures: thin translucent planes, fine silk-like threads, delicate glass-like layered ribbon surfaces, fine grain.
+Text: none.
+Constraints: exactly one composition, no panels. No text, letters, words, logos, brain anatomy, robots, UI screens, buildings, people, cream colors, or watermark. Keep the entire left 55 percent almost empty and dark.
+
+Generation mode: built-in image_gen. Exactly one image call; no variants or retries.

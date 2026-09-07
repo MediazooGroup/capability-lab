@@ -1,0 +1,11 @@
+**/node_modules/
+**/.env*
+**/.wrangler/
+**/dist/
+**/offline-dist/
+**/launch-dist/
+**/test-results/
+**/test-report/
+**/coverage/
+**/*.tsbuildinfo
+.DS_Store

@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+execFileSync('npx',['vite','build','--config','vite.launch.config.ts'],{stdio:'inherit'});
+let html=fs.readFileSync('launch-dist/index.html','utf8');
+html=html.replace(/<script[^>]*src="([^"]+)"[^>]*><\/script>/g,(_,src)=>`<script type="module">${fs.readFileSync(path.join('launch-dist',src),'utf8').replaceAll('</script','<\\/script')}</script>`);
+html=html.replace(/<link[^>]*href="([^"]+\.css)"[^>]*>/g,(_,src)=>`<style>${fs.readFileSync(path.join('launch-dist',src),'utf8')}</style>`);
+fs.mkdirSync('launch-ready',{recursive:true});fs.writeFileSync('launch-ready/index.html',html);
+fs.cpSync('public/excalidraw-assets','launch-ready/excalidraw-assets',{recursive:true});
+fs.copyFileSync('public/THIRD-PARTY-NOTICES.txt','launch-ready/THIRD-PARTY-NOTICES.txt');
+fs.copyFileSync('public/downloads/better-one-to-ones.excalidraw','launch-ready/better-one-to-ones.excalidraw');
+console.log('Launch-ready board:',Math.round(Buffer.byteLength(html)/1024),'KB. Open launch-ready/index.html or publish that folder.');

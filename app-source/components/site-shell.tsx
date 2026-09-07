@@ -1,0 +1,3 @@
+import { ArrowUpRight } from 'lucide-react';
+export function SiteHeader(){return <header className="site-header"><a href="/" aria-label="The Capability Lab home"><img src="/brand/finer-vision.svg" alt="Finer Vision" className="logo"/></a><a href="/" className="header-label">THE CAPABILITY LAB</a><nav aria-label="Main navigation"><a href="/board">The board</a><a href="/brain">The brain</a><a href="/resources">Take-home kit</a><a href="/guide">Guide</a><a href="/present" className="present-link">Present <ArrowUpRight size={16}/></a></nav></header>}
+export function SiteFooter(){return <footer><span>John Gordon · Finer Vision · Mediazoo Group</span><a href="/guide">User guide</a><a href="/present">Open presentation <ArrowUpRight size={16}/></a></footer>}
